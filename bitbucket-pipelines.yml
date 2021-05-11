@@ -1,0 +1,17 @@
+# This is a sample build configuration for all languages.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+# image: docker-image:tag
+image: imagexmedia/ci:php7.4
+clone:
+  depth: full
+
+pipelines:
+  default:
+    - step:
+        script:
+          - echo $BITBUCKET_CLONE_DIR
+          - git remote add --mirror=fetch m2 git@bitbucket.org:bsuttis/mirror2.git
+          - git push --force m2 master
