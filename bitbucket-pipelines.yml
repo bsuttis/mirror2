@@ -14,5 +14,6 @@ pipelines:
         script:
           - echo $BITBUCKET_CLONE_DIR
           #- git remote add --mirror=fetch m2 git@bitbucket.org:bsuttis/mirror2.git
-          - git remote add --mirror=fetch m2 git@github.com:bsuttis/mirror2.git
+          #- git remote add --mirror=fetch m2 git@github.com:bsuttis/mirror2.git
+          - git remote add m2 git@github.com:bsuttis/mirror2.git
           - git push --force m2 master
